@@ -482,13 +482,11 @@ for문과 while문의 목적
 
 	int[][] arrData = new int[2][3];
 
-	□	arrData		arrData.length(행의 길이)
-	□□	arrData[행]	arrData[행].length(열의 길이)
-     □□□ □□□	arrData[행][열]
+	     □		arrData		arrData.length(행의 길이)
+	    □□		arrData[행]	arrData[행].length(열의 길이)
+      □□□ □□□	arrData[행][열]
 --------------------------------------------------------------------------------
-![array](https://github.com/code-hyun/study-java/assets/122762287/262c8411-cce1-4373-bc69-6a9518951303)
-
-
+<img width="1000" src="https://github.com/code-hyun/study-java/assets/122762287/262c8411-cce1-4373-bc69-6a9518951303">
 ---------------------------------------------------------------------
 
 
@@ -558,10 +556,6 @@ for문과 while문의 목적
 
 ##### 리턴하면 안될 때
 	사용한 쪽에 로직의 결과를 전달할 필요가 없을 때.
-
-
-
-
 
 
 
@@ -655,14 +649,14 @@ static
 A: 부모 클래스, 상위 클래스, 슈퍼 클래스, 기반 클래스
 B: 자식 클래스, 하위 클래스, 서브 클래스, 파생 클래스
 
-super() : 부모 생성자
+##### super() : 부모 생성자
 	자식 클래스 타입의 객체로 부모필드에 접근할 수 있다.
 	하지만 자식 생성자만 호출하기 때문에, 자식 필드만 메모리에 할당된다고 생각할 수 있다.
 	사실 자식 생성자에는 항상 부모 생성자를 호출하기 때문에 자식 생성자 호출 시 부모와 자식 필드 모두
 	메모리에 할당된다. 이 때 부모 생성자를 호출하는 방법은 super()를 사용하는 것이다.
 	만약, super()를 작성하지 않더라도 컴파일러가 자동으로 작성해준다.
 
-다형성(polymorphism)
+##### 다형성(polymorphism)
 	1. 오버로딩
 	2. 오버라이딩(재정의)
 		부모 필드에서 선언한 메소드를 자식 필드에서 수정하고자 할 때 재정의를 해야 한다.
@@ -671,6 +665,7 @@ super() : 부모 생성자
 		자식 필드가 메모리에 할당되면서 재정의한 a메소드가 새롭게 만들어지는 것이 아니라
 		기존에 할당된 a메소드 저장공간에 새롭게 재정의한 자식 필드의 소스코드 주소가 들어가게 된다.
 		따라서 자식 객체로 a메소드에 접근하면 자식 필드에서 재정의한 소스코드의 내용이 읽히게 된다.
+		
 -------------------------------------------------------------------------------------------------
 #### 접근 권한 제어자(접근자)
 	default: 다른 패키지에서 접근 불가
@@ -694,7 +689,7 @@ super() : 부모 생성자
 	만약 up casting으로 자식 값을 전달받았다면, 자식에서 새롭게 구현한 기능들은 사용할 수 없기 때문에
 	down casting을 통해서 복구하여 사용한다.
 
-![casting](https://github.com/code-hyun/study-java/assets/122762287/6ef2552a-c408-4600-b830-2b5d6f86a6f8)
+<img width="1000" src="https://github.com/code-hyun/study-java/assets/122762287/6ef2552a-c408-4600-b830-2b5d6f86a6f8">
 
 #### instanceof(객체 간 타입 비교)
 	a instanceof A : 조건식
@@ -758,22 +753,6 @@ super() : 부모 생성자
 	이름이 없는 클래스이며 구현되지 않은 필드를 구현하기 위해 일회성으로 생성되는 클래스이다.
   
 ----------------------------------------------------------------------------------------
-
-#### 심화 실습(클래스 ~ 익명 클래스)
-
-- 스타벅스 본사 클래스 선언(register(Form form))
-- 본사 제출 양식 인터페이스 선언(Form)
-- 건물 클래스 선언(main 메소드)
-
-스타벅스 지점 오픈 시 본사에 양식을 작성하여 제출
-- 제출 양식에는 메뉴판(getMenu())과 판매 방식(sell(String menu))을 작성한다.
-- 강남점은 메뉴 그대로 판매할 수 있어야 하고, 잠실점은 무료 나눔 행사중이다.
-- 무료 나눔 행사중인 지점은 판매 방식이 따로 없다.
-
-나이키 본사 클래스 선언
-- 나머지는 위와 동일(잠실 정상, 강남 무료 나눔)
-
------------------------------------------------------------------------------------------
 
 #### 다중 상속
 	여러 부모 클래스를 상속하는 것을 다중 상속이라고 한다.
@@ -945,7 +924,6 @@ super() : 부모 생성자
 ----------------------------------------------------------------------------------------
 
 ##### 3. Map
-
 - 구현 클래스
 	HashMap(서버 간 데이터 교환)
 		Key와 Value 한 쌍으로 저장되며, 검색의 목적을 가지고 있다.
@@ -983,25 +961,6 @@ super() : 부모 생성자
 	1. Thread 클래스 상속
 	2. Runnable 인터페이스 지정
 -----------------------------------------------------------------------------------------
-[실습]
-동석이네 동물원에는 3마리의 동물이 있다.
-각 동물은 울음 소리가 다르고 2마리의 동물은 동시에 운다.
-나머지 1마리 동물은 2마리 동물이 모두 울고 나서 마지막에 운다.
-
-package명은 threadTask으로 만들고 클래스는 2개만 선언한다.
-하나의 클래스에는 main 쓰레드가 있다.
-Runnable 인터페이스로 멀티 쓰레드를 구현하고 반드시 join()을 사용한다.
-※ 각 동물은 10번씩만 운다.
-
-
-- 주석을 작성하였는가
-- Thread의 name필드를 사용할 수 있는가
-- 배열을 사용하였는가
-- 클래스를 두 개 선언하였는가
-- 가산점 : 람다식을 사용하였는가, main 쓰레드를 사용하였는가
-
-
----------------------------------------------------------------------
 
 #### 동기화(Synchronized)
    하나의 쓰레드가 자원에 접근 중일 때 다른 쓰레드가 동시에 같은 자원을 접근하지 못하게 막는 것.
@@ -1076,177 +1035,3 @@ Runnable 인터페이스로 멀티 쓰레드를 구현하고 반드시 join()을
          - 접근 후 결과 값이 있을 경우 Model 객체에 담은 후 처리
          - 클래스명 뒤에 DAO라는 문자열을 붙여준다.
          - DAO(Data Access Obejct)
-
-
-
-
-
-
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
